@@ -41,6 +41,13 @@ spring:
       # 格式化控制台打印（SQL）
       indent_output: true
 #
+# MyBatis 配置
+mybatis:
+  # Mapper XML 文件路径
+  mapper-locations: mapper/*Mapper.xml
+  # 实体类路径，可在 Mapper 中使用 实体类名，而非全限定名
+  type-aliases-package: cn.com.xuxiaowei.entity
+#
 # 日志 配置
 logging:
   level:
