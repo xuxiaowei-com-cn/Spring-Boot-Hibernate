@@ -1,0 +1,49 @@
+#
+# 服务器 配置
+server:
+  # 端口
+  port: 8080
+#
+# Spring Boot 配置
+spring:
+  #
+  # 数据库 配置
+  datasource:
+    # 数据库 URL
+    url: jdbc:oracle:thin:@192.168.8.128:1521:ORCL
+    # 数据库 驱动名称（包括包名）
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    # 数据库 用户名
+    username: scott
+    # 数据库 密码
+    password: orcl
+  #
+  # JPA 配置
+  jpa:
+    #
+    # Hibernate 配置
+    hibernate:
+      # 默认值：
+      # create：启动时删除上一次生成的表，并根据实体类生成表
+      # create-drop：启东时根据实体类生成表，SessionFactory 关闭时表会被删除
+      # update：启动时根据实体类生成表，当实体类属性变动时，表结构也会更新，在初期开发阶段使用此选项
+      # validate：启动时验证数据库和实体类是否一致，在我们数据结构稳定时采用此选项
+      # none：不采取任何措施
+      ddl-auto: create
+    #
+    # 设置 Hibernate 操作数据库的时候在控制台打印真实的SQL
+    show-sql: true
+  #
+  # 格式化
+  jackson:
+    # 序列化
+    serialization:
+      # 格式化控制台打印（SQL）
+      indent_output: true
+#
+# 日志 配置
+logging:
+  level:
+    web: debug
+    cn.com.xuxiaowei: debug
+
